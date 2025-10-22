@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfólio</title>
+</head>
+<body>
+
+    <div class="particuloas">
+
+    </div>
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#Inicio" class="menu-link">Inicio</a>
+            </li>
+             <li>
+                <a href="#Sobre" class="menu-link">Sobre</a>
+            </li>
+             <li>
+                <a href="#Projetos" class="menu-link">Projetos</a>
+            </li>
+             <li>
+                <a href="#Contatos" class="menu-link">Contato</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="Inicio" class="cabecalho">
+            <img src="./img/1000107403-fotor-2025102214309.png" alt="imagem" class="foto-perfil">
+            <h1>João Lucas</h1>
+            <p class="paragrafo">Desenvolvedor Front End</p>
+    </main>
+
+    <section id="Sobre" class="Sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafao">
+                Olá! Meu nome é João Lucas, tenho 18 anos e sou um desenvolvedor front-end apaixonado por criar experiências digitais envolventes.
+            </p>
+        </div>
+    </section>
+
+    <section id="Projetos" class="Projetos">
+  <h2 class="projetos-titulo">Meus Projetos</h2>
+
+  <div class="projetos-caixa">
+    <div class="projeto-item">
+      <img src="./img/Bullitt.jpg" alt="imagem" class="imagem-projetos">
+      <div class="caixa-text-projetos">
+      <h3 class="inf-projetos">Loja de carros</h3>
+      <p class="pargf-projetos">Seu próximo carro está aqui — qualidade, confiança e o melhor negócio para você sair dirigindo feliz.</p>
+      </div>
+    </div>
+
+    <div class="projeto-item">
+      <img src="./img/Website design by FIZ_CODES.jpg" alt="imagem" class="imagem-projetos">
+      <div class="caixa-text-projetos">
+      <h3 class="inf-projetos">Página de viagem</h3>
+      <p class="pargf-projetos">Viaje mais, gaste menos — pacotes incríveis e destinos inesquecíveis esperam por você.</p>
+      </div>
+    </div>
+
+    <div class="projeto-item">
+      <img src="./img/download.jpg" alt="imagem" class="imagem-projetos">
+      <div class="caixa-text-projetos">
+      <h3 class="inf-projetos">Loja de roupas</h3>
+      <p class="pargf-projetos">Estilo e conforto em cada detalhe — vista-se com atitude e sinta a diferença.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section id="Contatos" class="Contatos">
+        <h2 class="contatos-titulo">Meus Contatos</h2>
+        <form class="formulario-contato" id="formulario" onsubmit="EnviarmensagemparaoWhatsApp(event)">
+            <div class="grupo-form">
+  <input type="text" placeholder="Nome" class="campo-form" id="nome">
+</div>
+
+<div class="grupo-form">
+  <textarea placeholder="Digite sua mensagem" class="campo-form" id="mensagem"></textarea>
+</div>
+    <button type="button" class="btn-whatsapp">
+    Enviar mensagem para o WhatsApp
+  </button>
+        </form>
+        <script>
+function EnviarmensagemparaoWhatsApp(event) {
+    event.preventDefault();
+
+    const nome = document.getElementById('nome').value;
+    const mensagem = document.getElementById('mensagem').value;
+    const telefone = '5541987717055'; // número no formato 55 + DDD + número
+
+    const texto = `Olá, meu nome é ${nome}, ${mensagem}`;
+    const msgFormatada = encodeURIComponent(texto);
+
+    const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+
+    window.open(url, '_blank');
+}
+
+// Faz o botão chamar a função corretamente
+document.querySelector('.btn-whatsapp').addEventListener('click', EnviarmensagemparaoWhatsApp);
+</script>
+
+
+
+</body>
+</html>
